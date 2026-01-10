@@ -28,3 +28,17 @@ function switchTheme(e) {
 if (themeSwitch) {
     themeSwitch.addEventListener('change', switchTheme, false);
 }
+
+// TTS
+const ttsText = document.getElementById('tts-text');
+const ttsSpeakButton = document.getElementById('tts-speak-button');
+
+if (ttsSpeakButton) {
+    ttsSpeakButton.addEventListener('click', () => {
+        const text = ttsText.value;
+        if (text !== '') {
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+    });
+}
