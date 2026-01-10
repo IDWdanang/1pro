@@ -1,18 +1,12 @@
+// main.js - This is where you can add interactivity to your site.
+// For example, you could add smooth scrolling for the navigation links.
 
-const generateBtn = document.getElementById('generate-btn');
-const numbersContainer = document.getElementById('numbers-container');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-generateBtn.addEventListener('click', () => {
-    numbersContainer.innerHTML = '';
-    const numbers = new Set();
-    while (numbers.size < 6) {
-        numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
-
-    for (const number of numbers) {
-        const numberEl = document.createElement('div');
-        numberEl.classList.add('number');
-        numberEl.textContent = number;
-        numbersContainer.appendChild(numberEl);
-    }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
