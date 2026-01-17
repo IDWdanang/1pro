@@ -1,0 +1,22 @@
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+
+# Specific rules for major search engines
+User-agent: Googlebot
+User-agent: Yeti
+Allow: /
+Disallow: /search/
+Disallow: /*?
+
+# Block some common bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+Sitemap: https://aiminatosui.com/sitemap.xml
